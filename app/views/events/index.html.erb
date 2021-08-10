@@ -21,9 +21,8 @@
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= event.location %></td>
-        <td><%= event.event_date %></td>
+        <td><%= event.event_date.strftime('%m/%d/%Y')%></td>
         <td><%= event.cost_type %></td>
-        
         <td><%= event.active %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
@@ -34,5 +33,19 @@
 </table>
 
 <br>
+
+<strong><p> upcoming events </p></strong>
+<% @upcoming_events.each do |event| %>
+  <strong><p><%= event.name %></p></strong>
+    <strong><p><%= event.event_date.strftime('%m/%d/%Y') %></p></strong>
+  <% end %>
+<strong><p> past events</p></strong>
+<% @previous_events.each do |event| %>
+  <strong><p><%= event.name %></p></strong>
+    <strong><p><%= event.event_date.strftime('%m/%d/%Y') %></p></strong>
+  <% end %>
+
+  <br>
+
 
 <%= link_to 'New Event', new_event_path %>
