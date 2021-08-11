@@ -17,6 +17,12 @@ RSpec.describe Event, type: :model do
       second_event = Event.new(name: 'Birthday', location: 'Lagos', event_date: freezed_time, active: true, cost_type: 'free').save
       expect(second_event).to eql(false)
     end
+
+    it 'ensures you cant create an event with past date' do
+      freezed_time = Time.utc(2014, 1, 1, 12, 0, 0)
+      second_event = Event.new(name: 'Birthday', location: 'Lagos', event_date: freezed_time, active: true, cost_type: 'free').save
+      expect(second_event).to eql(false)
+    end
   end
 
   it { should validate_presence_of(:name) }
