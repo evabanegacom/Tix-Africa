@@ -1,40 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th>Event date</th>
-      <th>Type</th>
-      <th>Active</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  
     <% @events.each do |event| %>
-      <tr class='eventsbody'>
-        <p><td><%= event.name %></td></p>
-        <p><td><%= event.description %></td></p>
-        <p><td><%= event.location %></td></p>
-        <p><td><%= event.event_date.strftime('%m/%d/%Y')%></td></p>
-        <p><td><%= event.cost_type %></td></p>
+      <div class='eventsbody'>
+        <div>
+        <p> Name: &nbsp;&nbsp;&nbsp;&nbsp;<%= event.name %></p>
+        <p>Description:&nbsp;&nbsp;&nbsp;<%= event.description %></p>
+        <p>Location: &nbsp;&nbsp;&nbsp;<%= event.location %></p>
+        <p>Event Date:&nbsp;&nbsp;&nbsp;<%= event.event_date.strftime('%m/%d/%Y')%></p>
+        <p>Type:&nbsp;&nbsp;&nbsp;<%= event.cost_type %></p>
         <% if event.event_date < Time.now %>
-        <p><td><%= event.active = false %></td></p>
+        <p>Active: &nbsp;&nbsp;&nbsp;<%= event.active = false %></p>
         <% else %>
-        </p><td><%= event.active = true %></td></p>
+        </p>Active:&nbsp;&nbsp;&nbsp; <%= event.active = true %></p>
         <% end %>
-        <p><td><%= link_to 'Show', event %></td></p>
-        <p><td><%= link_to 'Edit', edit_event_path(event) %></td></p>
-        <p><td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td></p>
-      </tr>
+        <p><%= link_to 'Show', event %></p>
+        <p><%= link_to 'Edit', edit_event_path(event) %></p>
+        <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
     <% end %>
-  </tbody>
-</table>
+      </div>
+  
 
 <br>
 

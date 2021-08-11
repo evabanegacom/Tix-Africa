@@ -16,5 +16,13 @@
  @import 'bulma';
 
  .eventsbody {
-    line-height: 40px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ .eventsbody div {
+ display: flex;
+ justify-content: space-around;
+ 
  }
