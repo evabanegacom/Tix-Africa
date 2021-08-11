@@ -15,4 +15,6 @@
  */
  @import 'bulma';
 
- 
+ .eventsbody {
+     line-height: 40px;
+ }

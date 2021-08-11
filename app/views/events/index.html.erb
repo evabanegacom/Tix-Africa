@@ -15,22 +15,22 @@
     </tr>
   </thead>
 
-  <tbody class='eventsbody'>
+  <tbody>
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%= event.location %></td>
-        <td><%= event.event_date.strftime('%m/%d/%Y')%></td>
-        <td><%= event.cost_type %></td>
+      <tr class='eventsbody'>
+        <p><td><%= event.name %></td></p>
+        <p><td><%= event.description %></td></p>
+        <p><td><%= event.location %></td></p>
+        <p><td><%= event.event_date.strftime('%m/%d/%Y')%></td></p>
+        <p><td><%= event.cost_type %></td></p>
         <% if event.event_date < Time.now %>
-        <td><%= event.active = false %></td>
+        <p><td><%= event.active = false %></td></p>
         <% else %>
-        <td><%= event.active = true %></td>
+        </p><td><%= event.active = true %></td></p>
         <% end %>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <p><td><%= link_to 'Show', event %></td></p>
+        <p><td><%= link_to 'Edit', edit_event_path(event) %></td></p>
+        <p><td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td></p>
       </tr>
     <% end %>
   </tbody>
