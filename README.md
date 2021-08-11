@@ -69,8 +69,8 @@ This project was built using these technologies.
 
 - $ Run "rspec" in the console to see the tests run
 
-## LIVE DEMO
- [Link to live demo](https://barras.herokuapp.com/)
+# LIVE DEMO
+ [Link to live demo](https://operation-barras.herokuapp.com/)
 
 <!-- CONTACT -->
 
